@@ -1,0 +1,118 @@
+body{
+margin:0;
+padding-top:40px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height:20px;
+text-align: center;
+letter-spacing: 5px;
+background: #b5b8bf;
+}
+
+nav{
+padding:15px;
+top:0;
+}
+
+nav a{
+color: rgb(218, 145, 35);
+text-decoration: none;
+font-size: 30px;
+font-weight: bold;
+margin: 5px;
+}
+
+nav a:hover{
+    background: #143084;
+    border-radius: 10px;
+}
+
+div {
+    background: white;
+    border-radius: 100px;
+    margin: 30px;
+}
+
+
+.banner{
+width: 100%;
+height: 100vh;
+margin: 0px;
+}
+
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+
+section{
+gap: 40px;
+align-items: center;
+margin: 100px;
+justify-content: center;
+position: relative;
+}
+
+section p{
+ max-width: 1500px;
+ text-align: center;
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: bold;
+ padding: 30px;
+ letter-spacing: normal;
+}
+
+section img{
+width:250px;
+border-radius:30px;
+height: auto;
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 18%;
+    height: 40%;
+    bottom: 20px;
+    right: 25px;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+.whatsapp-float:hover{
+    background: rgb(109, 226, 109);
+}
+
+/* BOTÓN INICIAR SESIÓN (MODERNO & RESPONSIVE) */
+nav a.btn-login-nav {
+    background: linear-gradient(135deg, #143084, #2b4cad);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(20, 48, 132, 0.4);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    display: inline-block;
+    letter-spacing: 2px;
+    vertical-align: middle;
+}
+
+nav a.btn-login-nav:hover {
+    background: transparent;
+    color: #143084;
+    border-color: #143084;
+    border-radius: 50px;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(20, 48, 132, 0.6);
+}
+
+@media (max-width: 768px) {
+    nav a.btn-login-nav {
+        padding: 8px 20px;
+        font-size: 16px;
+        margin: 5px;
+    }
+    nav a {
+        font-size: 20px;
+    }
+}
