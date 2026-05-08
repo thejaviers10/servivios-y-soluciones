@@ -1,16 +1,13 @@
 FROM php:8.2-apache
 
-# 1. Instalar drivers de MySQL (Lo que causaba el error original)
+# Instalamos los drivers de MySQL
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-# 2. Copiar tus archivos
+# Copiamos tus archivos
 COPY . /var/www/html/
 
-# 3. Permisos
+# Permisos necesarios
 RUN chown -R www-data:www-data /var/www/html/
 
-# 4. Configurar puerto de forma simple para Railway
-RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
-
-# 5. Comando de inicio limpio
-CMD ["apache2-foreground"]
+# NO añadiremos comandos de puerto ni de inicio. 
+# Dejaremos que Railway use su configuración por defecto para evitar choques.
