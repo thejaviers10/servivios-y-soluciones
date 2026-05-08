@@ -1,18 +1,19 @@
 <?php
 class Conexion {
-    private $host = "localhost";
-    private $user = "root";
-    private $password = "";
-    private $db = "servicios";
-    private $conn;
-
     public function conectar() {
+        $host = getenv('MYSQLHOST');
+        $user = getenv('MYSQLUSER');
+        $pass = getenv('MYSQLPASSWORD');
+        $db   = getenv('MYSQLDATABASE');
+        $port = getenv('MYSQLPORT');
+
         try {
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=utf8", $this->user, $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $this->conn;
+            // Railway usa PDO por seguridad, este código se adapta a tu Usuario.php
+            $cnx = new PDO("mysql:host=$host;port=$port;dbname=$db", $user, $pass);
+            $cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $cnx;
         } catch (PDOException $e) {
-            die("Error de conexión a la base de datos: " . $e->getMessage());
+            die("Error en la conexión: " . $e->getMessage());
         }
     }
 }
