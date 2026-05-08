@@ -38,7 +38,7 @@
                 <div class="alert alert-success">Registro exitoso. Ahora puedes iniciar sesión.</div>
             <?php endif; ?>
 
-            <form action="../controlador/UsuarioController.php?action=login" method="POST" class="login-form">
+            <form action="controlador/UsuarioController.php?action=login" method="POST" class="login-form">
                 <div class="input-group">
                     <label for="gmail">Correo (Gmail)</label>
                     <input type="email" id="gmail" name="gmail" placeholder="tucorreo@gmail.com" required>
