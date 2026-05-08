@@ -16,20 +16,22 @@ $isLoggedIn = isset($_SESSION['user_id']);
 <body>
 <header>
 <nav>
-<a href="#index">Inicio</a>
-<a href="#servi">Servicios</a>
-<a href="#proye">Proyectos</a>
-<a href="#conta">Contáctenos</a>
-<?php if($isLoggedIn): ?>
-    <a href="vista/dashboard.php" class="btn-login-nav">Panel (<?php echo $_SESSION['user_name']; ?>)</a>
-    <a href="controlador/UsuarioController.php?action=logout" class="btn-login-nav" style="background: #dc3545; border-color: #dc3545;">Salir</a>
-<?php else: ?>
-    <a href="vista/login.php" class="btn-login-nav">Iniciar Sesión</a>
-<?php endif; ?>
-<a href="https://wa.me/573011106965" class="whatsapp-float" target="_blank">
-<img src="images/whatsapp png.png" alt="WhatsApp">
-</a>
-</nav>
+        <a href="#index">Inicio</a>
+        <a href="#servi">Servicios</a>
+        <a href="#proye">Proyectos</a>
+        <a href="#conta">Contáctenos</a>
+        
+        <?php if($isLoggedIn): ?>
+            <a href="dashboard.php" class="btn-login-nav">Panel (<?php echo $_SESSION['user_name']; ?>)</a>
+            <a href="controlador/UsuarioController.php?action=logout" class="btn-login-nav" style="background: #dc3545; border-color: #dc3545;">Cerrar Sesión</a>
+        <?php else: ?>
+            <a href="login.php" class="btn-login-nav">Iniciar Sesión</a>
+        <?php endif; ?>
+
+        <a href="https://wa.me/573011106965" class="whatsapp-float" target="_blank">
+            <img src="images/whatsapp png.png" alt="WhatsApp">
+        </a>
+    </nav>
 
 <div class="banner" id="index">
 <img src="images/logo.jpeg" alt="logo">
